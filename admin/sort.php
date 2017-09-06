@@ -1,6 +1,10 @@
 <?php
 include('../includes/dbconnect.php');
 
+
+          
+
+
 $qry= "SELECT * FROM registration_data WHERE gender= 'female' AND hosteller='0' ORDER BY registration_id";
 $res= mysqli_query($con,$qry);
  if($row=mysqli_num_rows($res))
@@ -54,20 +58,6 @@ $res4= mysqli_query($con,$qry4);
  	}
  }
 
+ header('Refresh:2;url="http://www.akgec.in/bdc17/admin/admin.php"');
 
-/*
-if(mysqli_num_rows($res5))
-{
- while($row5=mysqli_fetch_array($res5))
- {
- 	$list2 =array('recordsfound'=> $recordsfound,'registration_id_return'=> $row['registration_id'], 'student_name_return'=> $row['name'], 'email_return'=> $row['email'], 'contact_no_return'=> $row['contact_no']);
- }
-}
-else
-{
-	$list2 =array('recordsfound'=> $recordsnotfound, 'registration_id_return'=> $studentno, 'student_name_return'=> $name, 'email_return'=> $email, 'contact_no_return'=> $contact_no);
-
-}
-$return = json_encode($list);
-echo $return;*/
 ?>
